@@ -16,9 +16,7 @@ BugReports: https://github.com/ngsanogo/corpoaccident/issues
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
 Imports: 
-    dplyr,
-    bit64,
-    data.table
+    lubridate
 Depends: 
     R (>= 2.10)
 Suggests: 
