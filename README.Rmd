@@ -21,32 +21,37 @@ knitr::opts_chunk$set(
 [![GitHub commit](https://img.shields.io/github/last-commit/ngsanogo/corpoaccident)](https://github.com/ngsanogo/corpoaccident/commit/master)
 <!-- badges: end -->
 
-The goal of corpoaccident is to ...
+Le package corpoaccident est un package qui contient les jeux de données sur les accidents corporels de la circulation en France.
 
-## Installation
+Il a pour objectif de faciliter l’utilisation de ces données pour le logiciel R.
 
-You can install the released version of corpoaccident from [CRAN](https://CRAN.R-project.org) with:
+Un dashboard programmé avec le package [golem](https://github.com/ThinkR-open/golem) est disponible à l'adresse [accident](https://github.com/ngsanogo/accident).
+
+## Installation du package
+
+Vous pouvez installer la version stable du package depuis le [CRAN](https://CRAN.R-project.org) avec :
 
 ``` r
 install.packages("corpoaccident")
 ```
 
-And the development version from [GitHub](https://github.com/) with:
+et la version en développement depuis [GitHub](https://github.com/) avec :
 
 ``` r
 # install.packages("remotes")
 remotes::install_github("ngsanogo/corpoaccident")
 ```
-## Usage
+## Utilisation
 
-This is a basic example which shows you how to solve a common problem:
+Le package contient 4 bases de données : `carac`, `lieu`, `usager` et `vehicule`.
 
-```{r example}
+```{r}
 library(corpoaccident)
-## basic example code
 ```
 
-## Data Source
+## Source
+
+Ministère de l'Intérieur (France) : https://www.data.gouv.fr/fr/datasets/base-de-donnees-accidents-corporels-de-la-circulation/#_
 
 ## Code of Conduct
   
