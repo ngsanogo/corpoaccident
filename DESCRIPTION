@@ -2,14 +2,16 @@ Package: corpoaccident
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    person(given = "N'Gouro dit Issa",
+           family = "Sanogo",
+           email = "ngsanogo@gmail.com",
+           role = c("aut", "cre"))
+Maintainer: Issa Sanogo <ngsanogo@gmail.com>
+Description: Fournit un résumé annuel des accidents de la circulation en France. Source des données : https://www.data.gouv.fr/fr/datasets/base-de-donnees-accidents-corporels-de-la-circulation/#_.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/ngsanogo/corpoaccident
+BugReports: https://github.com/ngsanogo/corpoaccident/issues
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
