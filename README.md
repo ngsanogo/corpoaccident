@@ -23,8 +23,8 @@ install.packages("corpoaccident")
 And the development version from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("ngsanogo/corpoaccident")
+# install.packages("remotes")
+remotes::install_github("ngsanogo/corpoaccident")
 ```
 
 ## Example

@@ -1,5 +1,5 @@
 Package: corpoaccident
-Title: What the Package Does (One Line, Title Case)
+Title: Base de données sur les accidents corporels de la circulation en France
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "N'Gouro dit Issa",
@@ -21,3 +21,7 @@ Imports:
     data.table
 Depends: 
     R (>= 2.10)
+Suggests: 
+    knitr,
+    testthat
+VignetteBuilder: knitr
