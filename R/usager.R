@@ -2,8 +2,7 @@
 #'
 #' Base de données contenant des informations sur les usagers impliqués dans des accidents.
 #'
-#' @source \url{https://www.data.gouv.fr/fr/datasets/base-de-donnees-accidents-corporels-de-la-circulation/#_}
-#' @format A data frame with 2142195 rows and 12 variables:
+#' @format Un data.frame avec 2142195 observations et 12 variables:
 #' \describe{
 #'   \item{Num_Acc}{Identifiant de l’accident identique à celui du fichier "rubrique CARACTERISTIQUES" repris pour chacun des usagers décrits impliqués dans l’accident}
 #'   \item{num_veh}{Identifiant du véhicule repris pour chacun des usagers occupant ce véhicule (y compris les piétons qui sont rattachés aux véhicules qui les ont heurtés) – Code alphanumérique}
@@ -19,4 +18,5 @@
 #'   \item{etatp}{Cette variable permet de préciser si le piéton accidenté était seul ou non (1 = Seul, 2 = Accompagné, 3 = En groupe)}
 #' }
 #'
+#' @source \url{https://www.data.gouv.fr/fr/datasets/base-de-donnees-accidents-corporels-de-la-circulation/#_}
 "usager"

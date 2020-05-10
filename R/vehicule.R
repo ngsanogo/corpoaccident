@@ -2,8 +2,7 @@
 #'
 #' Base de données contenant des informations sur les véhicules impliqués dans l'accident.
 #'
-#' @source \url{https://www.data.gouv.fr/fr/datasets/base-de-donnees-accidents-corporels-de-la-circulation/#_}
-#' @format A data frame with 136021 rows and 13 variables:
+#' @format Un data.frame avec 136021 observations et 13 variables:
 #' \describe{
 #'   \item{Num_Acc}{Identifiant de l’accident identique à celui du fichier "rubrique CARACTERISTIQUES" repris pour chacun des usagers décrits impliqués dans l’accident}
 #'   \item{num_veh}{Identifiant du véhicule repris pour chacun des usagers occupant ce véhicule (y compris les piétons qui sont rattachés aux véhicules qui les ont heurtés) – Code alphanumérique}
@@ -16,4 +15,5 @@
 #'   \item{occutc}{Nombre d’occupants dans le transport en commun}
 #' }
 #'
+#' @source \url{https://www.data.gouv.fr/fr/datasets/base-de-donnees-accidents-corporels-de-la-circulation/#_}
 "vehicule"

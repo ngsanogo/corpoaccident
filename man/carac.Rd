@@ -3,24 +3,24 @@
 \docType{data}
 \name{carac}
 \alias{carac}
-\title{Caractéristiques de l'accident}
+\title{Caract\\u00e9ristiques de l'accident}
 \format{
 A data frame with 958469 rows and 16 variables:
 \describe{
-\item{Num_Acc}{Numéro d'identifiant de l’accident}
+\item{Num_Acc}{Num\\u00e9ro d'identifiant de l’accident}
 \item{jour}{Jour de l'accident}
 \item{mois}{Mois de l'accident}
-\item{an}{Année de l'accident}
+\item{an}{Ann\\u00e9e de l'accident}
 \item{hrmn}{Heure et minutes de l'accident}
-\item{lum}{Lumière : conditions d’éclairage dans lesquelles l'accident s'est produit (1 = Plein jour, 2 = Crépuscule ou aube, 3 = Nuit sans éclairage public, 4 = Nuit avec éclairage public non allumé, 5 = Nuit avec éclairage public allumé)}
-\item{dep}{Département : Code INSEE (Institut National de la Statistique et des Etudes Economiques) du département suivi d'un 0 (201 = Corse-du-Sud, 202 = Haute-Corse)}
-\item{agg}{Localisation (1 = Hors agglomération, 2 = agglomération)}
+\item{lum}{Lumi\\u00e8re : conditions d’\\u00e9clairage dans lesquelles l'accident s'est produit (1 = Plein jour, 2 = Cr\\u00e9puscule ou aube, 3 = Nuit sans \\u00e9clairage public, 4 = Nuit avec \\u00e9clairage public non allum\\u00e9, 5 = Nuit avec \\u00e9clairage public allum\\u00e9)}
+\item{dep}{D\\u00e9partement : Code INSEE (Institut National de la Statistique et des Etudes Economiques) du d\\u00e9partement suivi d'un 0 (201 = Corse-du-Sud, 202 = Haute-Corse)}
+\item{agg}{Localisation (1 = Hors agglom\\u00e9ration, 2 = agglom\\u00e9ration)}
 \item{int}{Intersection (1 = Hors intersection, 2 = Intersection en X, 3 = Intersection en T, 4 = Intersection en Y, 5 = Intersection à plus de 4 branches, 6 = Giratoire, 7 = Place, 8 = Passage à niveau, 9 = Autre intersection)}
-\item{atm}{Conditions atmosphériques (1 = Normale, 2 = Pluie légère, 3 = Pluie forte, 4 = Neige - grêle, 5 = Brouillard - fumée, 6 = Vent fort - tempête, 7 = Temps éblouissant, 8 = Temps couvert, 9 = Autre)}
-\item{col}{Type de collision (1 = Deux véhicules - frontale, 2 = Deux véhicules - par l’arrière, 3 = Deux véhicules - par le coté, 4 = Trois véhicules et plus - en chaîne, 5 = Trois véhicules et plus - collisions multiples, 6 = Autre collision, 7 = Sans collision)}
-\item{com}{Commune : Le numéro de commune est un code donné par l‘INSEE. Le code comporte 3 chiffres calés à droite.}
-\item{adr}{Adresse postale : variable renseignée pour les accidents survenus en agglomération}
-\item{gps}{Codage GPS (M = Métropole, A = Antilles (Martinique ou Guadeloupe), G = Guyane, R = Réunion, Y = Mayotte )}
+\item{atm}{Conditions atmosph\\u00e9riques (1 = Normale, 2 = Pluie l\\u00e9g\\u00e8re, 3 = Pluie forte, 4 = Neige - gr\\u00eale, 5 = Brouillard - fum\\u00e9e, 6 = Vent fort - temp\\u00eate, 7 = Temps \\u00e9blouissant, 8 = Temps couvert, 9 = Autre)}
+\item{col}{Type de collision (1 = Deux v\\u00e9hicules - frontale, 2 = Deux v\\u00e9hicules - par l’arri\\u00e8re, 3 = Deux v\\u00e9hicules - par le cot\\u00e9, 4 = Trois v\\u00e9hicules et plus - en cha\\u00eene, 5 = Trois v\\u00e9hicules et plus - collisions multiples, 6 = Autre collision, 7 = Sans collision)}
+\item{com}{Commune : Le num\\u00e9ro de commune est un code donn\\u00e9 par l‘INSEE. Le code comporte 3 chiffres cal\\u00e9s à droite.}
+\item{adr}{Adresse postale : variable renseign\\u00e9e pour les accidents survenus en agglom\\u00e9ration}
+\item{gps}{Codage GPS (M = M\\u00e9tropole, A = Antilles (Martinique ou Guadeloupe), G = Guyane, R = R\\u00e9union, Y = Mayotte )}
 \item{lat}{Latitude}
 \item{long}{Longitude}
 }
@@ -32,6 +32,6 @@ A data frame with 958469 rows and 16 variables:
 carac
 }
 \description{
-Base de données contenant les caractéristiques qui décrivent les circonstances générales de l'accident.
+Base de donn\\u00e9es contenant les caract\\u00e9ristiques qui d\\u00e9crivent les circonstances g\\u00e9n\\u00e9rales de l'accident.
 }
 \keyword{datasets}
