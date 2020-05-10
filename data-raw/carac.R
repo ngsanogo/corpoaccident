@@ -35,23 +35,23 @@ carac <- carac %>%
     ),
     hrmn = gsub("^(\\d{2})(\\d{2})$", "\\1:\\2", hrmn),
     lum = factor(lum, levels = 1:5,
-                 labels = c("Plein jour", "Cr\\u00e9puscule ou aube", "Nuit sans \\u00e9clairage public",
-                            "Nuit avec \\u00e9clairage public non allum\\u00e9", "Nuit avec \\u00e9clairage public allum\\u00e9 ")
+                 labels = c("Plein jour", "Crépuscule ou aube", "Nuit sans éclairage public",
+                            "Nuit avec éclairage public non allumé", "Nuit avec éclairage public allumé ")
     ),
-    agg = factor(agg, levels = 1:2, labels = c("Hors agglom\\u00e9ration", "En agglom\\u00e9ration")),
+    agg = factor(agg, levels = 1:2, labels = c("Hors agglomération", "En agglomération")),
     int = factor(int, levels = 1:9, labels = c("Hors intersection", "Intersection en X",
                                                "Intersection en T" , "Intersection en Y" ,
                                                "Intersection à plus de 4 branches" , "Giratoire",
                                                "Place", "Passage à niveau", "Autre intersection")
     ),
-    atm = factor(atm, levels = 1:9, labels = c("Normale", "Pluie l\\u00e9g\\u00e8re", "Pluie forte" ,
-                                               "Neige - gr\\u00eale ", "Brouillard - fum\\u00e9e",
-                                               "Vent fort - temp\\u00eate" , "Temps \\u00e9blouissant",
+    atm = factor(atm, levels = 1:9, labels = c("Normale", "Pluie légère", "Pluie forte" ,
+                                               "Neige - grêle ", "Brouillard - fumée",
+                                               "Vent fort - tempête" , "Temps éblouissant",
                                                "Temps couvert ", "Autre")
     ),
-    col = factor(col, levels = 1:7, labels = c("Deux v\\u00e9hicules - frontale", "Deux v\\u00e9hicules - par l’arri\\u00e8re",
-                                               "Deux v\\u00e9hicules - par le cot\\u00e9 ", "Trois v\\u00e9hicules et plus - en cha\\u00eene",
-                                               "Trois v\\u00e9hicules et plus - collisions multiples",
+    col = factor(col, levels = 1:7, labels = c("Deux véhicules - frontale", "Deux véhicules - par l’arrière",
+                                               "Deux véhicules - par le coté ", "Trois véhicules et plus - en chaîne",
+                                               "Trois véhicules et plus - collisions multiples",
                                                "Autre collision" , "Sans collision")
     ),
     com = dplyr::case_when(
@@ -61,8 +61,8 @@ carac <- carac %>%
       TRUE ~ NA_character_
     ),
     gps = factor(gps, levels = c("M", "A", "G", "R", "Y"),
-                 labels = c("M\\u00e9tropole", "Antilles (Martinique ou Guadeloupe)",
-                                               "Guyane", "R\\u00e9union", "Mayotte")
+                 labels = c("Métropole", "Antilles (Martinique ou Guadeloupe)",
+                            "Guyane", "Réunion", "Mayotte")
     ),
     lat = as.numeric(lat),
     long = as.numeric(long),

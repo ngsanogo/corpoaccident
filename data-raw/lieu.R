@@ -25,7 +25,8 @@ lieu <- lieu %>%
     Num_Acc = bit64::as.integer64(Num_Acc),
     catr = factor(catr, levels = c(1:6, 9),
                   labels = c("Autoroute", "Route Nationale", "Route Départementale", "Voie Communale",
-                             "Hors réseau public", "Parc de stationnement ouvert à la circulation publique", "autre")
+                             "Hors réseau public", "Parc de stationnement ouvert à la circulation publique",
+                             "autre")
     ),
     voie = as.numeric(voie),
     v1 = as.numeric(v1),
@@ -45,7 +46,8 @@ lieu <- lieu %>%
     lartpc = as.numeric(lartpc),
     larrout = as.numeric(larrout),
     surf = factor(surf, levels = 1:9,
-                  labels = c("normale", "mouillée", "flaques", "inondée", "enneigée", "boue", "verglacée", "corps gras - huile", "autre")
+                  labels = c("normale", "mouillée", "flaques", "inondée", "enneigée", "boue",
+                             "verglacée", "corps gras - huile", "autre")
     ),
     infra = factor(infra, levels = 1:7,
                    labels = c("Souterrain - tunnel", "Pont - autopont", "Bretelle d’échangeur ou de raccordement",
