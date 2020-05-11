@@ -5,7 +5,7 @@
 \alias{usager}
 \title{Usagers impliqués dans des accidents}
 \format{
-A data frame with 2142195 rows and 12 variables:
+Un data.frame avec 2142195 observations et 12 variables:
 \describe{
 \item{Num_Acc}{Identifiant de l’accident identique à celui du fichier "rubrique CARACTERISTIQUES" repris pour chacun des usagers décrits impliqués dans l’accident}
 \item{num_veh}{Identifiant du véhicule repris pour chacun des usagers occupant ce véhicule (y compris les piétons qui sont rattachés aux véhicules qui les ont heurtés) – Code alphanumérique}

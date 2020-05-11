@@ -5,7 +5,7 @@
 \alias{lieu}
 \title{Lieu principal de l'accident}
 \format{
-A data frame with 958469 rows and 18 variables:
+Un data.frame avec 958469 observations et 18 variables:
 \describe{
 \item{Num_Acc}{Identifiant de l’accident identique à celui du fichier "rubrique CARACTERISTIQUES" repris dans l’accident}
 \item{catr}{Catégorie de route (1 = Autoroute, 2 = Route Nationale, 3 = Route Départementale, 4 = Voie Communale, 5 = Hors réseau public, 6 = Parc de stationnement ouvert à la circulation publique, 9 = autre)}
