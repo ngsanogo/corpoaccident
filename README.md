@@ -141,7 +141,7 @@ table(df$an, df$grav) %>%
 Ministère de l’Intérieur (France) :
 <https://www.data.gouv.fr/fr/datasets/base-de-donnees-accidents-corporels-de-la-circulation/#_>
 
-## Code of Conduct
+## Code de conduite
 
 Veuillez noter que le projet Corpoaccident est publié avec un [code de
 conduite des
