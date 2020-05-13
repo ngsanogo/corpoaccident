@@ -25,18 +25,8 @@ Un dashboard programmé avec le package
 
 ## Installation du package
 
-Vous pouvez installer la
-version<!-- stable du package depuis le [CRAN](https://CRAN.R-project.org) avec : -->
-
-<!-- ``` r -->
-
-<!-- install.packages("corpoaccident") -->
-
-<!-- ``` -->
-
-<!-- et la version -->
-
-en développement depuis [GitHub](https://github.com/) avec :
+Vous pouvez installer le package depuis [GitHub](https://github.com/)
+avec :
 
 ``` r
 # install.packages("remotes")
