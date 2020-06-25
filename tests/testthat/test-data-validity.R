@@ -1,5 +1,5 @@
 test_that("Test nrow carac and lieu", {
-  expect_equal(base::nrow(carac) == nrow(lieu), TRUE)
+  expect_equal(base::nrow(carac) == base::nrow(lieu), TRUE)
 })
 
 test_that("Test years", {
@@ -19,5 +19,5 @@ test_that("Test hours", {
 })
 
 test_that("Test birth year", {
-  expect_equal(base::max(usager$an_nais, na.rm = TRUE) == 2018, TRUE)
+  expect_equal(base::all(base::range(usager$an_nais, na.rm = TRUE) == c(1896, 2018)), TRUE)
 })

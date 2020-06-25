@@ -70,7 +70,7 @@ carac %>%
 ```
 
 ```{r}
-data(usager)
+data("usager")
 df <- carac %>%
   mutate(an = as.character(2000 + an)) %>%
   filter(an %in% c(2018, 2017)) %>%

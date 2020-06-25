@@ -1,0 +1,34 @@
+---
+title: "Introduction to the corpoaccident dataset"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to the corpoaccident dataset}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, warning=FALSE, message=FALSE}
+library(corpoaccident)
+library(dplyr)
+library(ggplot2)
+```
+
+## La base de données corpoaccident
+
+La base de données `corpoaccident` fournit des informations sur les accidents corporels de la circulation (soit un accident survenu sur une voie ouverte à la circulation publique, impliquant au moins un véhicule et ayant fait au moins une victime ayant nécessité des soins).  
+La base de données est constituée de 4 data.frame (carac, lieu, usager et vihicule).
+
+```{r, data}
+data("carac")
+data("lieu")
+data("usager")
+data("vehicule")
+```
+

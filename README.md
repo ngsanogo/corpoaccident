@@ -109,20 +109,19 @@ carac %>%
 | 2018 | 57783 |
 
 ``` r
-data(usager)
+data("usager")
 df <- carac %>%
   mutate(an = as.character(2000 + an)) %>%
   filter(an %in% c(2018, 2017)) %>%
   inner_join(usager)
 #> Joining, by = "Num_Acc"
-#> Warning: Column `Num_Acc` has different attributes on LHS and RHS of join
 
 table(df$an, df$grav) %>%
   kable()
 ```
 
 |      | Indemne |  Tué | Blessé hospitalisé | Blessé léger |
-| ---- | ------: | ---: | -----------------: | -----------: |
+| :--- | ------: | ---: | -----------------: | -----------: |
 | 2017 |   56270 | 3600 |              28993 |        47158 |
 | 2018 |   54248 | 3392 |              22169 |        50360 |
 
