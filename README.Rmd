@@ -56,6 +56,7 @@ Pour plus d'information sur les données, merci de [cliquer ici](https://www.dat
 ```{r, warning=FALSE, message=FALSE}
 library(corpoaccident)
 library(dplyr)
+library(ggplot2)
 library(knitr)
 ```
 
@@ -66,7 +67,15 @@ data("carac")
 carac %>%
   mutate(an = as.character(2000 + an)) %>%
   count(an) %>%
-  kable()
+  ggplot(aes(an, n, group = 1)) +
+  geom_point() +
+  geom_line() +
+  theme_linedraw() +
+  labs(x = "Année",
+       y = "Nombre d'accidents",
+       title = "Évolution du nombre annuel d'accidents",
+       subtitle = "2005-2018",
+       caption = "Source : https://www.data.gouv.fr/")
 ```
 
 ```{r}

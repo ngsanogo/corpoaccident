@@ -78,6 +78,7 @@ ici](https://www.data.gouv.fr/fr/datasets/r/8d4df329-bbbb-434c-9f1f-596d78ad529f
 ``` r
 library(corpoaccident)
 library(dplyr)
+library(ggplot2)
 library(knitr)
 ```
 
@@ -88,25 +89,18 @@ data("carac")
 carac %>%
   mutate(an = as.character(2000 + an)) %>%
   count(an) %>%
-  kable()
+  ggplot(aes(an, n, group = 1)) +
+  geom_point() +
+  geom_line() +
+  theme_linedraw() +
+  labs(x = "Année",
+       y = "Nombre d'accidents",
+       title = "Évolution du nombre annuel d'accidents",
+       subtitle = "2005-2018",
+       caption = "Source : https://www.data.gouv.fr/")
 ```
 
-| an   |     n |
-| :--- | ----: |
-| 2005 | 87026 |
-| 2006 | 82993 |
-| 2007 | 83850 |
-| 2008 | 76767 |
-| 2009 | 74409 |
-| 2010 | 69379 |
-| 2011 | 66974 |
-| 2012 | 62250 |
-| 2013 | 58397 |
-| 2014 | 59854 |
-| 2015 | 58654 |
-| 2016 | 59432 |
-| 2017 | 60701 |
-| 2018 | 57783 |
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
 ``` r
 data("usager")
