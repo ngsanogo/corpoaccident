@@ -1,8 +1,8 @@
 ---
-title: "Introduction to the corpoaccident dataset"
+title: "Introduction à la base de données corpoaccident"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Introduction to the corpoaccident dataset}
+  %\VignetteIndexEntry{Introduction à la base de données corpoaccident  }
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -32,3 +32,34 @@ data("usager")
 data("vehicule")
 ```
 
+### carac
+
+```{r, carac}
+head(carac)
+
+str(carac)
+```
+
+### lieu
+
+```{r, lieu}
+head(lieu)
+
+str(lieu)
+```
+
+### usager
+
+```{r, usager}
+head(usager)
+
+str(usager)
+```
+
+### vehicule
+
+```{r, vehicule}
+head(vehicule)
+
+str(vehicule)
+```
