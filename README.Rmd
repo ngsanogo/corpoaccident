@@ -11,6 +11,7 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+options(knitr.kable.NA = "")
 ```
 
 # corpoaccident <a href='https://github.com/ngsanogo/corpoaccident'><img src='man/figures/corpoaccident.ico' align="right"  /></a>
@@ -67,22 +68,16 @@ data("carac")
 carac %>%
   mutate(an = as.character(2000 + an)) %>%
   count(an) %>%
-  ggplot(aes(an, n, group = 1)) +
-  geom_point() +
-  geom_line() +
-  theme_linedraw() +
-  labs(x = "Année",
-       y = "Nombre d'accidents",
-       title = "Évolution du nombre annuel d'accidents",
-       subtitle = "2005-2018",
-       caption = "Source : https://www.data.gouv.fr/")
+  mutate(diff = n- lag(n)) %>%
+  kable(col.names = c("Année", "Nombre d'accidents", "Evolution"),
+        align = "l", caption = "Évolution du nombre annuel d'accidents de 2005 à 2018\nSource : https://www.data.gouv.fr/")
 ```
 
 ```{r}
 data("usager")
 df <- carac %>%
   mutate(an = as.character(2000 + an)) %>%
-  filter(an %in% c(2018, 2017)) %>%
+  #filter(an %in% c(2018, 2017)) %>%
   inner_join(usager)
 
 table(df$an, df$grav) %>%

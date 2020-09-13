@@ -89,24 +89,36 @@ data("carac")
 carac %>%
   mutate(an = as.character(2000 + an)) %>%
   count(an) %>%
-  ggplot(aes(an, n, group = 1)) +
-  geom_point() +
-  geom_line() +
-  theme_linedraw() +
-  labs(x = "Année",
-       y = "Nombre d'accidents",
-       title = "Évolution du nombre annuel d'accidents",
-       subtitle = "2005-2018",
-       caption = "Source : https://www.data.gouv.fr/")
+  mutate(diff = n- lag(n)) %>%
+  kable(col.names = c("Année", "Nombre d'accidents", "Evolution"),
+        align = "l", caption = "Évolution du nombre annuel d'accidents de 2005 à 2018\nSource : https://www.data.gouv.fr/")
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+| Année | Nombre d’accidents | Evolution |
+| :---- | :----------------- | :-------- |
+| 2005  | 87026              |           |
+| 2006  | 82993              | \-4033    |
+| 2007  | 83850              | 857       |
+| 2008  | 76767              | \-7083    |
+| 2009  | 74409              | \-2358    |
+| 2010  | 69379              | \-5030    |
+| 2011  | 66974              | \-2405    |
+| 2012  | 62250              | \-4724    |
+| 2013  | 58397              | \-3853    |
+| 2014  | 59854              | 1457      |
+| 2015  | 58654              | \-1200    |
+| 2016  | 59432              | 778       |
+| 2017  | 60701              | 1269      |
+| 2018  | 57783              | \-2918    |
+
+Évolution du nombre annuel d’accidents de 2005 à 2018 Source :
+<https://www.data.gouv.fr/>
 
 ``` r
 data("usager")
 df <- carac %>%
   mutate(an = as.character(2000 + an)) %>%
-  filter(an %in% c(2018, 2017)) %>%
+  #filter(an %in% c(2018, 2017)) %>%
   inner_join(usager)
 #> Joining, by = "Num_Acc"
 
@@ -116,6 +128,18 @@ table(df$an, df$grav) %>%
 
 |      | Indemne |  Tué | Blessé hospitalisé | Blessé léger |
 | :--- | ------: | ---: | -----------------: | -----------: |
+| 2005 |   80272 | 5543 |              40792 |        70891 |
+| 2006 |   76163 | 4942 |              41869 |        64111 |
+| 2007 |   76910 | 4838 |              39754 |        66955 |
+| 2008 |   69612 | 4443 |              36179 |        60726 |
+| 2009 |   67806 | 4443 |              34506 |        59207 |
+| 2010 |   62847 | 4172 |              31337 |        55836 |
+| 2011 |   60560 | 4111 |              30635 |        53237 |
+| 2012 |   56577 | 3842 |              28107 |        50102 |
+| 2013 |   52622 | 3427 |              26895 |        45750 |
+| 2014 |   53487 | 3557 |              27502 |        47640 |
+| 2015 |   53378 | 3616 |              27717 |        45667 |
+| 2016 |   54640 | 3655 |              28376 |        46751 |
 | 2017 |   56270 | 3600 |              28993 |        47158 |
 | 2018 |   54248 | 3392 |              22169 |        50360 |
 
