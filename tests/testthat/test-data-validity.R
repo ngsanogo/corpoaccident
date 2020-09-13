@@ -15,7 +15,7 @@ test_that("Test days", {
 })
 
 test_that("Test hours", {
-  expect_equal(base::all(base::range(base::as.numeric(lubridate::hm(carac$hrmn))) == c(60, 86340)), TRUE)
+  expect_equal(base::all(base::range(base::as.difftime(carac$hrmn, "%H:%M", units = "secs")) == c(60, 86340)), TRUE)
 })
 
 test_that("Test birth year", {
