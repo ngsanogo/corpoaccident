@@ -14,15 +14,14 @@ LazyData: true
 URL: https://github.com/ngsanogo/corpoaccident
 BugReports: https://github.com/ngsanogo/corpoaccident/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Imports: 
-    dplyr,
-    ggplot2,
-    lubridate
 Depends: 
     R (>= 2.10)
 Suggests: 
     knitr,
     testthat,
-    rmarkdown
+    rmarkdown,
+    dplyr,
+    ggplot2
 VignetteBuilder: knitr
