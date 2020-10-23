@@ -24,25 +24,25 @@ usager <- usager %>%
   dplyr::mutate(
     Num_Acc = bit64::as.integer64(Num_Acc),
     place = as.numeric(place),
-    catu = factor(catu, levels = 1:4, labels = c("Conducteur", "Passager", "Piéton", "Piéton en roller ou en trottinette")),
-    grav = factor(grav, levels = 1:4, labels = c("Indemne", "Tué", "Blessé hospitalisé", "Blessé léger")),
+    catu = factor(catu, levels = 1:4, labels = c("Conducteur", "Passager", "Pi\u00e9ton", "Pi\u00e9ton en roller ou en trottinette")),
+    grav = factor(grav, levels = 1:4, labels = c("Indemne", "Tu\u00e9", "Bless\u00e9 hospitalis\u00e9", "Bless\u00e9 l\u00e9ger")),
     sexe = factor(sexe, levels = 1:2, labels = c("Homme", "Femme")),
     an_nais = as.numeric(an_nais),
     trajet = factor(trajet, levels = c(1:5, 9),
-                    labels = c("Domicile – travail", "Domicile – école", "Courses – achats",
-                               "Utilisation professionnelle", "Promenade – loisirs", "Autre")),
+                    labels = c("Domicile \u2013 travail", "Domicile \u2013 \u00e9cole", "Courses \u2013 achats",
+                               "Utilisation professionnelle", "Promenade \u2013 loisirs", "Autre")),
     secu = factor(secu, levels = paste0(rep(c(1:4, 9), each = 3), rep(1:3, 5)),
-                  label = paste0(rep(c("Ceinture", "Casque", "Dispositif enfants", "Equipement réfléchissant", "Autre"), each = 3),
-                                 rep(c("Oui", "Non", "Non déterminable"), 5))
+                  label = paste0(rep(c("Ceinture", "Casque", "Dispositif enfants", "Equipement r\u00e9fl\u00e9chissant", "Autre"), each = 3),
+                                 rep(c("Oui", "Non", "Non d\u00e9terminable"), 5))
     ),
     locp = factor(locp, levels = 1:8,
-                  labels = c("A + 50 m du passage piéton", "A – 50 m du passage piéton", "Sans signalisation lumineuse",
+                  labels = c("A + 50 m du passage pi\u00e9ton", "A \u2013 50 m du passage pi\u00e9ton", "Sans signalisation lumineuse",
                              "Avec signalisation lumineuse", "Sur trottoir", "Sur accotement",
-                             "Sur refuge ou BAU", "Sur contre allée")),
+                             "Sur refuge ou BAU", "Sur contre all\u00e9e")),
     actp = factor(actp, levels = c(0:6, 9),
-                  labels = c("non renseigné ou sans objet", "Sens véhicule heurtant", "Sens inverse du véhicule",
-                             "Traversant", "Masqué", "Jouant – courant", "Avec animal", "Autre")),
-    etatp = factor(etatp, levels = 1:3, labels = c("Seul", "Accompagné", "En groupe"))
+                  labels = c("non renseign\u00e9 ou sans objet", "Sens v\u00e9hicule heurtant", "Sens inverse du v\u00e9hicule",
+                             "Traversant", "Masqu\u00e9", "Jouant \u2013 courant", "Avec animal", "Autre")),
+    etatp = factor(etatp, levels = 1:3, labels = c("Seul", "Accompagn\u00e9", "En groupe"))
   )
 
 # Save the data

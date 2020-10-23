@@ -24,37 +24,37 @@ lieu <- lieu %>%
   dplyr::mutate(
     Num_Acc = bit64::as.integer64(Num_Acc),
     catr = factor(catr, levels = c(1:6, 9),
-                  labels = c("Autoroute", "Route Nationale", "Route Départementale", "Voie Communale",
-                             "Hors réseau public", "Parc de stationnement ouvert à la circulation publique",
+                  labels = c("Autoroute", "Route Nationale", "Route D\u00e9partementale", "Voie Communale",
+                             "Hors r\u00e9seau public", "Parc de stationnement ouvert \u00e0 la circulation publique",
                              "autre")
     ),
     voie = as.numeric(voie),
     v1 = as.numeric(v1),
     v2 = as.numeric(v2),
     circ = factor(circ, levels = 1:4,
-                  labels = c("A sens unique", "Bidirectionnelle", "A chaussées séparées",
-                             "Avec voies d’affectation variable")
+                  labels = c("A sens unique", "Bidirectionnelle", "A chauss\u00e9es s\u00e9par\u00e9es",
+                             "Avec voies d\u2019affectation variable")
     ),
     nbv = as.numeric(nbv),
     pr = as.numeric(pr),
     pr1 = as.numeric(pr1),
-    vosp = factor(vosp, levels = 1:3, labels = c("Piste cyclable", "Banque cyclable", "Voie réservée")),
-    prof = factor(prof, levels = 1:4, labels = c("Plat", "Pente", "Sommet de côte", "Bas de cô")),
+    vosp = factor(vosp, levels = 1:3, labels = c("Piste cyclable", "Banque cyclable", "Voie r\u00e9serv\u00e9e")),
+    prof = factor(prof, levels = 1:4, labels = c("Plat", "Pente", "Sommet de c\u00f4te", "Bas de c\u00f4")),
     plan = factor(plan, levels = 1:4,
-                  labels = c("Partie rectiligne", "En courbe à gauche", "En courbe à droite", "En «S»")
+                  labels = c("Partie rectiligne", "En courbe \u00e0 gauche", "En courbe \u00e0 droite", "En \u00abS\u00bb")
     ),
     lartpc = as.numeric(lartpc),
     larrout = as.numeric(larrout),
     surf = factor(surf, levels = 1:9,
-                  labels = c("normale", "mouillée", "flaques", "inondée", "enneigée", "boue",
-                             "verglacée", "corps gras - huile", "autre")
+                  labels = c("normale", "mouill\u00e9e", "flaques", "inond\u00e9e", "enneig\u00e9e", "boue",
+                             "verglac\u00e9e", "corps gras - huile", "autre")
     ),
     infra = factor(infra, levels = 1:7,
-                   labels = c("Souterrain - tunnel", "Pont - autopont", "Bretelle d’échangeur ou de raccordement",
-                   "Voie ferrée", "Carrefour aménagé", "Zone piétonne", "Zone de péage")
+                   labels = c("Souterrain - tunnel", "Pont - autopont", "Bretelle d\u2019\u00e9changeur ou de raccordement",
+                   "Voie ferr\u00e9e", "Carrefour am\u00e9nag\u00e9", "Zone pi\u00e9tonne", "Zone de p\u00e9age")
                    ),
     situ = factor(situ, levels = 1:5,
-                  labels = c("Sur chaussée", "Sur bande d’arrêt d’urgence", "Sur accotement",
+                  labels = c("Sur chauss\u00e9e", "Sur bande d\u2019arr\u00eat d\u2019urgence", "Sur accotement",
                              "Sur trottoir", "Sur piste cyclable")
                   ),
     env1 = stringr::str_replace(lieu$env1, pattern = "^$", replacement = NA_character_)
