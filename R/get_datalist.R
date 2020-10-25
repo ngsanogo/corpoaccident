@@ -1,15 +1,14 @@
-#' get_datalist
-#' Récupère la liste des données disponibles sur data.gouv.fr
+#' Récupère la liste des données disponibles sur data.gouv.fr.
 #'
 #' @param years Vecteur numérique des années à télécharger
-#' @return Liste de tous les ensembles de données disponibles s'ils sont vides ou filtrés sur les années dans un tableau numérique
+#' @return Renvoie un data.frame correspondant à la liste de l'ensemble des données disponibles.
 #' @examples
 #' get_datalist()
 #' get_datalist(2018)
 #' get_datalist(2016:2018)
 #' @export
 
-get_datalist <- function(years = NA) {
+get_datalist <- function(years = NA_integer_) {
 
   attempt::stop_if_not(is.numeric(years), msg = "Year(s) should be in a numeric vector")
 
@@ -28,18 +27,18 @@ get_datalist <- function(years = NA) {
   ## Supprime les NAs
   urls <- urls[!is.na(urls)]
 
-  attempt::stop_if_not(length(filenames) == length(urls), msg = "Le nombre de descriptif est différent du nombre de lien")
+  attempt::stop_if_not(length(filenames) == length(urls), msg = "Le nombre de descriptif est diff\u00e9rent du nombre de lien")
 
   # Construit le data.frame
   datalist <- dplyr::tibble(filename = filenames, url = urls) %>%
     dplyr::filter(grepl(".csv", filename)) %>% # filter non CSV files
     dplyr::mutate(year = stringr::str_sub(filename, start = -8, end = -5)) # extract year
 
-  attempt::stop_if_not(all(years %in% datalist$year), msg = paste0("Year(s) should beetween ", min(datalist$year), " and ", max(datalist$year)))
-
-  if (is.na(years) && length(years) == 1) {
+  if (all(is.na(years)) & length(years) == 1) {
     return(datalist)
   }
+
+  attempt::stop_if_not(all(years %in% datalist$year), msg = paste0("Year(s) should beetween ", min(datalist$year), " and ", max(datalist$year)))
 
   if (all(!is.na(years))) {
     years <- attempt::try_catch(expr = as.numeric(years),

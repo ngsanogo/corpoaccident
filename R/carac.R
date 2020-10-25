@@ -23,4 +23,6 @@
 #' }
 #'
 #' @source \url{https://www.data.gouv.fr/fr/datasets/base-de-donnees-accidents-corporels-de-la-circulation/#_}
-"carac"
+#' @name carac
+#' @rdname carac
+NULL

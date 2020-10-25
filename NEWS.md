@@ -1,13 +1,5 @@
-# corpoaccident 0.0.0.9000
+# corpoaccident (development version)
 
-* Added vignette
+# corpoaccident 0.0.0.9
 
-* Added tests
-
-* Added a `NEWS.md` file to track changes to the package.
-
-* Added a `CODE_OF_CONDUCT.md` file
-
-* Added a `README.Rmd` file
-
-* Added a `LICENSE.md` file
+* Première version `0 errors ✓ | 0 warnings ✓ | 0 notes ✓`

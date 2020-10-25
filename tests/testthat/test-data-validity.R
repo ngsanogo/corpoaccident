@@ -1,23 +1,27 @@
+db <- suppressWarnings(get_data(2018))
+
 test_that("Test nrow carac and lieu", {
-  expect_equal(base::nrow(carac) == base::nrow(lieu), TRUE)
+  expect_true(nrow(db$carac) == nrow(db$lieu))
 })
 
 test_that("Test years", {
-  expect_equal(base::all(base::unique(carac$an) %in% 5:18), TRUE)
+  expect_true(all(unique(db$carac$an) == 18))
 })
 
 test_that("Test months", {
-  expect_equal(base::all(base::unique(carac$mois) %in% 1:12), TRUE)
+  expect_true(all(unique(db$carac$mois) %in% 1:12))
 })
 
 test_that("Test days", {
-  expect_equal(base::all(base::unique(carac$jour) %in% 1:31), TRUE)
+  expect_true(all(unique(db$carac$jour) %in% 1:31))
 })
 
 test_that("Test hours", {
-  expect_equal(base::all(base::range(base::as.difftime(carac$hrmn, "%H:%M", units = "secs")) == c(60, 86340)), TRUE)
+  x <- range(as.difftime(db$carac$hrmn, "%H:%M", units = "secs"))
+  y <- as.difftime(c("0:01", "23:59"), format = "%H:%M", units = "secs")
+  expect_true(all(x == y))
 })
 
 test_that("Test birth year", {
-  expect_equal(base::all(base::range(usager$an_nais, na.rm = TRUE) == c(1896, 2018)), TRUE)
+  expect_true(all(range(db$usager$an_nais, na.rm = TRUE) == c(1911, 2018)))
 })

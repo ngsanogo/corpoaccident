@@ -9,7 +9,9 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "100%",
+  message = FALSE,
+  warning = FALSE
 )
 options(knitr.kable.NA = "")
 ```
@@ -22,7 +24,7 @@ options(knitr.kable.NA = "")
 [![GitHub commit](https://img.shields.io/github/last-commit/ngsanogo/corpoaccident)](https://github.com/ngsanogo/corpoaccident/commit/master)
 <!-- badges: end -->
 
-Le package corpoaccident est un package qui contient les jeux de données sur les accidents corporels de la circulation en France.
+Le package corpoaccident est un package qui permet d'utiliser les jeux de données sur les accidents corporels de la circulation en France disponible sur data.gouv.fr.
 
 Il a pour objectif de faciliter l’utilisation de ces données pour le logiciel R.
 
@@ -41,9 +43,7 @@ remotes::install_github("ngsanogo/corpoaccident")
 Pour chaque accident corporel (soit un accident survenu sur une voie ouverte à la circulation publique, impliquant au moins un véhicule et ayant fait au moins une victime ayant nécessité des soins), des saisies d’information décrivant l’accident sont effectuées par l’unité des forces de l’ordre (police, gendarmerie, etc.) qui est intervenue sur le lieu de l’accident. Ces saisies sont rassemblées dans une fiche intitulée bulletin d’analyse des accidents corporels. L’ensemble de ces fiches constitue le fichier national des accidents corporels de la circulation dit "Fichier BAAC1
 " administré par l’Observatoire national interministériel de la sécurité routière "ONISR".
 
-Les bases de données, extraites du fichier BAAC, répertorient l'intégralité des accidents corporels de la circulation intervenus durant une année précise en France métropolitaine ainsi que les départements d’Outre-mer (Guadeloupe, Guyane, Martinique, La Réunion et Mayotte depuis 2012) avec une description simplifiée. Cela comprend des informations de localisation de l’accident, telles que renseignées ainsi que des informations concernant les caractéristiques de l’accident et son lieu, les véhicules impliqués et leurs victimes.
-
-Le package contient 4 bases de données : `carac`, `lieu`, `usager` et `vehicule`.
+Les bases de données, extraites du fichier BAAC, répertorient l'intégralité des accidents corporels de la circulation intervenus durant une année précise en France métropolitaine ainsi que les départements d’Outre-mer (Guadeloupe, Guyane, Martinique, La Réunion et Mayotte depuis 2012) avec une description simplifiée. Cela comprend des informations de localisation de l’accident, telles que renseignées ainsi que des informations concernant les caractéristiques de l’accident  (`carac`) et son lieu (`lieu`), les véhicules impliqués (`vehicule`) et leurs victimes (`usager`).
 
 Ces bases occultent néanmoins certaines données spécifiques relatives aux usagers et aux véhicules et à leur comportement dans la mesure où la divulgation de ces données porterait atteinte à la protection de la vie privée des personnes physiques aisément identifiables ou ferait apparaître le comportement de telles personnes alors que la divulgation de ce comportement pourrait leur porter préjudice (avis de la CADA – 2 janvier 2012). 
 
@@ -54,39 +54,48 @@ Pour plus d'information sur les données, merci de [cliquer ici](https://www.dat
 
 ## Utilisation
 
-```{r, warning=FALSE, message=FALSE}
+```{r}
 library(corpoaccident)
 library(dplyr)
 library(ggplot2)
 library(knitr)
 ```
 
-Évolution du nombre annuel d'accidents.
+La liste des données disponible sur data.gouv.fr
+```{r}
+get_datalist(2015:2018) %>%
+  kable()
+```
+
+
+Récupération des données de 2018
 
 ```{r}
-data("carac")
-carac %>%
+df <- suppressWarnings(get_data(2015:2018))
+```
+
+
+```{r}
+df$carac %>%
   mutate(an = as.character(2000 + an)) %>%
   count(an) %>%
-  mutate(diff = n- lag(n)) %>%
+  mutate(diff = n - lag(n)) %>%
   kable(col.names = c("Année", "Nombre d'accidents", "Evolution"),
-        align = "l", caption = "Évolution du nombre annuel d'accidents de 2005 à 2018\nSource : https://www.data.gouv.fr/")
+        align = "l", caption = "Évolution du nombre annuel d'accidents de 2015 à 2018\nSource : https://www.data.gouv.fr/")
 ```
 
 ```{r}
-data("usager")
-df <- carac %>%
+df$carac %>%
   mutate(an = as.character(2000 + an)) %>%
-  #filter(an %in% c(2018, 2017)) %>%
-  inner_join(usager)
-
-table(df$an, df$grav) %>%
+  inner_join(df$usager) %>%
+  select(an, grav) %>%
+  table() %>%
   kable()
 ```
 
 ## Source
 
-Ministère de l'Intérieur (France) : https://www.data.gouv.fr/fr/datasets/base-de-donnees-accidents-corporels-de-la-circulation/#_
+Ministère de l'Intérieur (France) : https://www.data.gouv.fr/fr/datasets/base-de-dfs-accidents-corporels-de-la-circulation/#_
 
 ## Code de conduite
   

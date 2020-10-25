@@ -1,3 +1,13 @@
+#' Charge l'ensemble des données des années spécifiées.
+#'
+#' @param years Vecteur numérique des années à télécharger
+#'
+#' @return Renvoie une liste contenant les tables caractéristique, lieux, usagers et véhicules.
+#' @export
+#'
+#' @examples
+#' get_data(2018)
+
 get_data <- function(years) {
   datalist <- get_datalist(years)
   # Caractéristique
@@ -116,7 +126,7 @@ get_data <- function(years) {
                       labels = c("Domicile \u2013 travail", "Domicile \u2013 \u00e9cole", "Courses \u2013 achats",
                                  "Utilisation professionnelle", "Promenade \u2013 loisirs", "Autre")),
       secu = factor(secu, levels = paste0(rep(c(1:4, 9), each = 3), rep(1:3, 5)),
-                    label = paste0(rep(c("Ceinture", "Casque", "Dispositif enfants", "Equipement r\u00e9fl\u00e9chissant", "Autre"), each = 3),
+                    labels = paste0(rep(c("Ceinture", "Casque", "Dispositif enfants", "Equipement r\u00e9fl\u00e9chissant", "Autre"), each = 3),
                                    rep(c("Oui", "Non", "Non d\u00e9terminable"), 5))
       ),
       locp = factor(locp, levels = 1:8,
