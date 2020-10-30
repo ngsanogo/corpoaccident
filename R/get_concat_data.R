@@ -9,5 +9,7 @@
 #' get_concat_data(2018)
 
 get_concat_data <- function(years) {
-NULL
+  corpo_data <- get_data(years)
+  corpo_data %>%
+    purrr::reduce(dplyr::inner_join)
 }
