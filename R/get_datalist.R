@@ -1,11 +1,13 @@
 #' Récupère la liste des données disponibles sur data.gouv.fr.
 #'
-#' @param years Vecteur numérique des années à télécharger
+#' @param years Vecteur numérique des années à télécharger; la valeur par défaut est NA_integer_
 #' @return Renvoie un data.frame correspondant à la liste de l'ensemble des données disponibles.
 #' @examples
+#' \dontrun{
 #' get_datalist()
 #' get_datalist(2018)
 #' get_datalist(2016:2018)
+#' }
 #' @export
 
 get_datalist <- function(years = NA_integer_) {

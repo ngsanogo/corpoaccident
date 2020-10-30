@@ -7,7 +7,7 @@
 get_datalist(years = NA_integer_)
 }
 \arguments{
-\item{years}{Vecteur numérique des années à télécharger}
+\item{years}{Vecteur numérique des années à télécharger; la valeur par défaut est NA_integer_}
 }
 \value{
 Renvoie un data.frame correspondant à la liste de l'ensemble des données disponibles.
@@ -16,7 +16,9 @@ Renvoie un data.frame correspondant à la liste de l'ensemble des données dispo
 Récupère la liste des données disponibles sur data.gouv.fr.
 }
 \examples{
+\dontrun{
 get_datalist()
 get_datalist(2018)
 get_datalist(2016:2018)
+}
 }

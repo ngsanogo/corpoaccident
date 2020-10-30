@@ -1,14 +1,15 @@
 #' Charge l'ensemble des données des années spécifiées.
 #'
-#' @param years Vecteur numérique des années à télécharger
+#' @param years Vecteur numérique des années à télécharger; la valeur par défaut est NA_integer_
 #'
 #' @return Renvoie une liste contenant les tables caractéristique, lieux, usagers et véhicules.
-#' @export
-#'
 #' @examples
+#' \dontrun{
 #' get_data(2018)
+#' }
+#' @export
 
-get_data <- function(years) {
+get_data <- function(years = NA_integer_) {
   datalist <- get_datalist(years)
   # Caractéristique
   carac <- datalist %>%

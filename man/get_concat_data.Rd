@@ -4,10 +4,10 @@
 \alias{get_concat_data}
 \title{Renvoie la table unique des données des années specifiées.}
 \usage{
-get_concat_data(years)
+get_concat_data(years = NA_integer_)
 }
 \arguments{
-\item{years}{Vecteur numérique des années à télécharger}
+\item{years}{Vecteur numérique des années à télécharger; la valeur par défaut est NA_integer_}
 }
 \value{
 Un data.frame correspondant la jointure des différentes tables
@@ -16,5 +16,7 @@ Un data.frame correspondant la jointure des différentes tables
 Renvoie la table unique des données des années specifiées.
 }
 \examples{
+\dontrun{
 get_concat_data(2018)
+}
 }

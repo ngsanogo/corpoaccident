@@ -4,12 +4,12 @@
 \alias{download_raw_datasets}
 \title{Cette fonction permet de télécharger les données csv de data.gouv.fr.}
 \usage{
-download_raw_datasets(years, path = getwd(), quiet = TRUE)
+download_raw_datasets(years = NA_integer_, path = getwd(), quiet = TRUE)
 }
 \arguments{
-\item{years}{Vecteur numérique des années à télécharger}
+\item{years}{Vecteur numérique des années à télécharger; la valeur par défaut est NA_integer_}
 
-\item{path}{Vecteur de caractères des noms de chemin complets ; la valeur par défaut correspond au répertoire de travail, getwd()}
+\item{path}{Vecteur de caractères des noms de chemin complets; la valeur par défaut correspond au répertoire de travail, getwd()}
 
 \item{quiet}{Si TRUE, supprime les messages et la barre de progression; la valeur par défaut est TRUE.}
 }

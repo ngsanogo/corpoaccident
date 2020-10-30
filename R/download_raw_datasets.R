@@ -1,7 +1,7 @@
 #' Cette fonction permet de télécharger les données csv de data.gouv.fr.
 #'
-#' @param years Vecteur numérique des années à télécharger
-#' @param path  Vecteur de caractères des noms de chemin complets ; la valeur par défaut correspond au répertoire de travail, getwd()
+#' @param years Vecteur numérique des années à télécharger; la valeur par défaut est NA_integer_
+#' @param path  Vecteur de caractères des noms de chemin complets; la valeur par défaut correspond au répertoire de travail, getwd()
 #' @param quiet Si TRUE, supprime les messages et la barre de progression; la valeur par défaut est TRUE.
 #'
 #' @return Un code entier (invisible), 0 pour le succès et non zéro pour l'échec.
@@ -12,7 +12,7 @@
 #' }
 #' @export
 
-download_raw_datasets <- function(years, path = getwd(), quiet = TRUE) {
+download_raw_datasets <- function(years = NA_integer_, path = getwd(), quiet = TRUE) {
   datalist <- get_datalist(years)
   datalist <- datalist %>%
     dplyr::mutate(path = paste0(path, '/', filename))

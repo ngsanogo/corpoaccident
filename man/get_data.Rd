@@ -4,10 +4,10 @@
 \alias{get_data}
 \title{Charge l'ensemble des données des années spécifiées.}
 \usage{
-get_data(years)
+get_data(years = NA_integer_)
 }
 \arguments{
-\item{years}{Vecteur numérique des années à télécharger}
+\item{years}{Vecteur numérique des années à télécharger; la valeur par défaut est NA_integer_}
 }
 \value{
 Renvoie une liste contenant les tables caractéristique, lieux, usagers et véhicules.
@@ -16,5 +16,7 @@ Renvoie une liste contenant les tables caractéristique, lieux, usagers et véhi
 Charge l'ensemble des données des années spécifiées.
 }
 \examples{
+\dontrun{
 get_data(2018)
+}
 }
