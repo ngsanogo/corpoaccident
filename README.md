@@ -44,18 +44,16 @@ forces de l’ordre (police, gendarmerie, etc.) qui est intervenue sur le
 lieu de l’accident. Ces saisies sont rassemblées dans une fiche
 intitulée bulletin d’analyse des accidents corporels. L’ensemble de ces
 fiches constitue le fichier national des accidents corporels de la
-circulation dit “Fichier BAAC1” administré par l’Observatoire national
+circulation dit " Fichier BAAC " administré par l’Observatoire national
 interministériel de la sécurité routière “ONISR”.
 
-Les bases de données, extraites du fichier BAAC, répertorient
-l’intégralité des accidents corporels de la circulation intervenus
-durant une année précise en France métropolitaine ainsi que les
-départements d’Outre-mer (Guadeloupe, Guyane, Martinique, La Réunion et
-Mayotte depuis 2012) avec une description simplifiée. Cela comprend des
-informations de localisation de l’accident, telles que renseignées ainsi
-que des informations concernant les caractéristiques de l’accident
-(`carac`) et son lieu (`lieu`), les véhicules impliqués (`vehicule`) et
-leurs victimes (`usager`).
+Depuis le 5 décembre 2011, un certain nombre de données du fichier
+national des accidents est accessible à travers le site
+www.data.gouv.fr, site destiné à accueillir et diffuser les données
+publiques de l’Etat et des collectivités publiques. L’ONISR met en ligne
+une base extraite du fichier national des accidents corporels de la
+circulation, dit « Fichier BAAC1 », éliminant tout risque
+d’identification des personnes.
 
 Ces bases occultent néanmoins certaines données spécifiques relatives
 aux usagers et aux véhicules et à leur comportement dans la mesure où la
@@ -65,12 +63,19 @@ apparaître le comportement de telles personnes alors que la divulgation
 de ce comportement pourrait leur porter préjudice (avis de la CADA – 2
 janvier 2012).
 
+La base répertorie l’intégralité des accidents corporels de la
+circulation, intervenus de 2005 à 2018 en France (5 DOM inclus, à savoir
+Guadeloupe, Guyane, Martinique, La Réunion et Mayotte à partir de 2012),
+avec leur description simplifiée (plus un indice de gravité). Cela
+inclut toutes les informations de localisation disponibles dans le
+Fichier BAAC, telles qu’elles y sont renseignées ainsi que les
+informations concernant les véhicules et le dénombrement des victimes.
 `Avertissement : Les données sur la qualification de blessé hospitalisé
 pour l’année 2018 ne peuvent être comparées aux années précédentes suite
 à des modifications de process de saisie des forces de l’ordre`
 
-Pour plus d’information sur les données, merci de [cliquer
-ici](https://www.data.gouv.fr/fr/datasets/r/8d4df329-bbbb-434c-9f1f-596d78ad529f).
+Cette base est également disponible sous forme de 4 fichiers .csv
+(caractéristiques, lieux, véhicules, usagers) par année de BAAC.
 
 ## Utilisation
 
@@ -119,7 +124,8 @@ df$carac %>%
   count(an) %>%
   mutate(diff = n - lag(n)) %>%
   kable(col.names = c("Année", "Nombre d'accidents", "Evolution"),
-        align = "l", caption = "Évolution du nombre annuel d'accidents de 2015 à 2018\nSource : https://www.data.gouv.fr/")
+        align = "l",
+        caption = "Évolution du nombre annuel d'accidents de 2015 à 2018\nSource : https://www.data.gouv.fr/")
 ```
 
 | Année | Nombre d’accidents | Evolution |
@@ -150,8 +156,9 @@ df$carac %>%
 
 ## Source
 
-Ministère de l’Intérieur (France) :
-<https://www.data.gouv.fr/fr/datasets/base-de-dfs-accidents-corporels-de-la-circulation/#_>
+  - <https://www.data.gouv.fr/fr/datasets/base-de-donnees-accidents-corporels-de-la-circulation/>
+
+  - <https://www.data.gouv.fr/fr/datasets/r/8d4df329-bbbb-434c-9f1f-596d78ad529f>
 
 ## Code de conduite
 
